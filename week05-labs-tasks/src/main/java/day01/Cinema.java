@@ -2,6 +2,8 @@ package day01;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 public class Cinema {
@@ -11,7 +13,22 @@ public class Cinema {
         filmLists.add(movie);
     }
 
-    public void findMovieByTime(LocalDateTime time) {
-        System.out.println();
+    public String findMovieByTime(LocalDateTime time) {
+        List<String> goodTime = new ArrayList<>();
+        for (Movie m: filmLists) {
+            if (isTimeGood(m, time)) {
+                goodTime.add(m.getTitle());
+            }
+        }
+        return goodTime.toString();
+    }
+
+    private boolean isTimeGood(Movie m, LocalDateTime time) {
+        for (LocalDateTime ldt: m.getPlayTime()) {
+            if (ldt.equals(time)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

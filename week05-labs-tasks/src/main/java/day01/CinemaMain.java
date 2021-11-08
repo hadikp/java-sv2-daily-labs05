@@ -17,9 +17,10 @@ public class CinemaMain {
                 LocalDateTime.of(2021,11,8,22,25)
         )));
 
-        //System.out.println(cinema.findMovieByTime(LocalDateTime.of(2021,11,8,10,45))); // []
-        //System.out.println(cinema.findMovieByTime(LocalDateTime.of(2021,11,8,19,45))); // [Jurassic Park]
-        //System.out.println(cinema.findMovieByTime(LocalDateTime.of(2021,11,8,22,25))); // [Titanic, Jurassic Park]
+
+        System.out.println(cinema.findMovieByTime(LocalDateTime.of(2021,11,8,10,45))); // []
+        System.out.println(cinema.findMovieByTime(LocalDateTime.of(2021,11,8,19,45))); // [Jurassic Park]
+        System.out.println(cinema.findMovieByTime(LocalDateTime.of(2021,11,8,22,25))); // [Titanic, Jurassic Park]
 
     }
 }
